@@ -1,0 +1,12 @@
+`timescale 1ns/1ps
+module tb_encoder4x2;
+reg i0, i1, i2, i3;
+wire y0, y1;
+encoder4x2 uut (i0, i1, i2, i3, y0, y1);
+initial begin
+i0=0; i1=0; i2=0; i3=1; #5;
+i0=0; i1=0; i2=1; i3=0; #5;
+i0=0; i1=1; i2=0; i3=0; #5;
+i0=1; i1=0; i2=0; i3=0; #5;
+end
+endmodule

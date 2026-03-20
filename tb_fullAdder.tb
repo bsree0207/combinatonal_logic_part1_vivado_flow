@@ -1,0 +1,19 @@
+`timescale 1ns/1ps
+module tb_fullAdder;
+    reg  a, b, Cin;
+    wire sum, Cout;
+
+    fullAdder uut (.a(a), .b(b), .Cin(Cin), .sum(sum), .Cout(Cout));
+
+    initial begin
+        {a,b,Cin}=3'b000; #10;
+        {a,b,Cin}=3'b001; #10;
+        {a,b,Cin}=3'b010; #10;
+        {a,b,Cin}=3'b011; #10;
+        {a,b,Cin}=3'b100; #10;
+        {a,b,Cin}=3'b101; #10;
+        {a,b,Cin}=3'b110; #10;
+        {a,b,Cin}=3'b111; #10;
+        $finish;
+    end
+endmodule
